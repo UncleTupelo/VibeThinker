@@ -8,7 +8,7 @@
 
 VibeThinker-1.5B is a 1.5B-parameter dense model that challenges the prevailing notion that small models inherently lack robust reasoning capabilities. Developed with an innovative post-training methodology centered on the **"Spectrum-to-Signal Principle (SSP)"**, our model achieves reasoning performance comparable to models hundreds of times larger.
 
-<p align="center"><img src="./figures/vt1.5b_eval.png" /></p>
+<p align="center"><img src="./figures/vibethinker_eval.png" /></p>
 
 ## Key Features
 
@@ -19,8 +19,7 @@ VibeThinker-1.5B is a 1.5B-parameter dense model that challenges the prevailing 
 
 ## Model Downloads
 
-The model checkpoint is available at: [Hugging Face Hub](xxx)
-
+The model checkpoint is available at: [Hugging Face](https://huggingface.co/WeiboAI/VibeThinker-1.5B)
 
 ## License
 
