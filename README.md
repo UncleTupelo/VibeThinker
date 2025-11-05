@@ -17,11 +17,10 @@ Most remarkably, VibeThinker-1.5B surpasses the initial DeepSeek R1 model—whic
 [2025.11.05] 📢📢📢 VibeThinker-1.5B will be open-sourced soon. Stay tuned!
 
 ## Key Features
-
-- **Ultra-Efficient**: Only 1.5B parameters - 100× to 600× smaller than giants like Kimi K2 (1000B+) and DeepSeek R1 (671B)
-- **Cost-Effective**: Total training cost of **$7,800**
-- **Outstanding Capabilities**: VibeThinker-1.5B is the leading model in the sub-3B category, demonstrates superior performance on challenging mathematical and coding benchmarks
-- **Innovative Methodology**: SSP framework with Two-Stage Diversity-Exploring Distillation and MaxEnt-Guided Policy Optimization
+- **Ultra-Efficient**: VibeThinker-1.5B redefines the efficiency frontier for reasoning models, achieving state-of-the-art performance in mathematical and coding tasks with only 1.5B parameters—100× to 600× smaller than giants like Kimi K2 (1000B+) and DeepSeek R1(671B). 
+- **Innovative Methodology**: We propose an innovative post-training technique centered on the “Spectrum-to-Signal Principle (SSP)”. This framework systematically enhances output diversity by first employing a “Two-Stage Diversity-Exploring Distillation” in the SFT phase to generate a broad spectrum of solutions, followed by the “MaxEnt-Guided Policy Optimization (MGPO)” framework in the RL phase to amplify the correct signal.
+- **Outstanding Capabilities**: Despite a substantial parameter gap—competing with models 10 to hundreds of times larger—our 1.5B model demonstrates remarkable performance. On the AIME24, AIME25, and HMMT25 benchmarks, it surpasses open-source contenders like DeepSeek R1-0120 and GPT-OSS-20B-Medium, while achieving results comparable to MiniMax-M1.
+- **Cost-Effective**: While state-of-the-art models like DeepSeek R1 and MiniMax-M1 incur post-training costs of $294K and $535K respectively, our approach achieves this for just $7,800. This represents a reduction by a factor of  “30 to 60”, fundamentally changing the economics of developing high-performance reasoning models.
 
 ## Model Downloads
 
