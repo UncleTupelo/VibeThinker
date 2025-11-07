@@ -1,7 +1,7 @@
 # VibeThinker
 <p align="center"><img src="./figures/logo.png" width="100"/></p>
 
-<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp📄  <a href="https://xxxx">Technical Report</a> </p>
+<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://xxxx">Model Scope</a>   |  &nbsp&nbsp📄  <a href="https://xxxx">Techical Report</a></p>
 
 
 ## Introduction
