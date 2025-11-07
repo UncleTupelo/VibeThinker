@@ -43,6 +43,8 @@ The evaluation program and usage guide have been prepared and are available at t
 
 Math eval -> [Here](./eval/math/README.md).
 
+Code eval -> [Here](./eval/code/README.md).
+
 ## License
 
 This code repository is licensed under [the MIT License](https://github.com/WeiboAI/VibeThinker/blob/main/LICENSE).
