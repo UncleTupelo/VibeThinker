@@ -1,7 +1,7 @@
 # VibeThinker
 <p align="center"><img src="./figures/logo.png" width="100"/></p>
 
-<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://xxxx">Model Scope</a>   |  &nbsp&nbsp📄  <a href="https://xxxx">Techical Report</a></p>
+<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://xxxx">Model Scope</a>   |  &nbsp&nbsp📄  <a href="https://github.com/WeiboAI/VibeThinker/blob/main/VibeThinker-1.5B.pdf">Techical Report</a></p>
 
 
 ## Introduction
@@ -27,11 +27,11 @@ Most remarkably, VibeThinker-1.5B surpasses the initial DeepSeek R1 model—whic
 
 - **Outstanding Capabilities**: Despite a substantial parameter gap—competing with models 10 to hundreds of times larger—our 1.5B model demonstrates remarkable performance. On the AIME24, AIME25, and HMMT25 benchmarks, it surpasses open-source contenders like DeepSeek R1-0120 and GPT-OSS-20B-Medium, while achieving results comparable to MiniMax-M1.
 
-<p align="center"><img src="./figures/performence.png" width="80%"/></p>
+<p align="center"><img src="./figures/Performence.png" width="80%"/></p>
 
 - **Cost-Effective**: While state-of-the-art models like DeepSeek R1 and MiniMax-M1 incur post-training costs of $294K and $535K respectively, our approach achieves this for just $7,800. This represents a reduction by a factor of  “30 to 60”, fundamentally changing the economics of developing high-performance reasoning models.
 
-<p align="center"><img src="./figures/cost.png" width="80%"/></p>
+<p align="center"><img src="./figures/Cost.png" width="80%"/></p>
 
 ## Model Downloads
 
