@@ -41,7 +41,7 @@ The model checkpoint is available at: [Hugging Face](https://huggingface.co/Weib
 
 The evaluation program and usage guide have been prepared and are available at the following link.
 
-Math eval -> [Here](/workspace/train-aitech/projects/zhibin12/VibeThinker/eval/math/README.md).
+Math eval -> [Here](./eval/math/README.md).
 
 ## License
 
