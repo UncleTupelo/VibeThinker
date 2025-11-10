@@ -41,6 +41,9 @@ The model checkpoint is available at: [Hugging Face](https://huggingface.co/Weib
 
 If you wish to reproduce the results reported in our technical report, the evaluation program and usage guide have been prepared and are available at the following links.: [Math Eval](./eval/math/README.md)​ and [Code Eval](./eval/code/README.md).
 
+
+Sample responses from some benchmarks:[here](https://drive.google.com/drive/folders/1qom754QSjujDI98Wv8LIKTaTszPkAN6q?usp=drive_link).
+
 ## Usage Guidelines
 
 **We recommend using this model for competitive-style math and coding problems.** 
