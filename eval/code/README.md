@@ -16,7 +16,9 @@ require python version: python3.12
 
 ```shell
 pip install -e . -i https://mirrors.aliyun.com/pypi/simple/
-pip install datasets==3.6.0 -i https://mirrors.aliyun.com/pypi/simple/
+# our custom settings for run our models
+pip install datasets==3.6.0 vllm==0.10.1 -i https://mirrors.aliyun.com/pypi/simple/
+pip install --no-cache-dir https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
 ```
 
 ### 3. Download LiveCodeBench Dataset for eval
@@ -55,7 +57,8 @@ def format_prompt_generation(
         from transformers import AutoTokenizer
 
         tokenizer = AutoTokenizer.from_pretrained(
-            "<put local path of vibe thinker 1.5B here>", padding_side="left", use_fast=False
+          # or put local path of vibe thinker 1.5B here
+            "VibeThinker/VibeThinker-1.5B", padding_side="left", use_fast=False
         )
         prompt = f"{PromptConstants.SYSTEM_MESSAGE_GENERIC}\n\n"
         prompt += f"{get_generic_question_template_answer(question)}"
@@ -95,12 +98,35 @@ LanguageModelList: list[LanguageModel] = [
 ```
 
 
+
+### 4. Update Sampling Params
+
+1. update top_k and stop words settings
+
+   edit lcb_runner/runner/vllm_runner.py
+
+```python
+class VLLMRunner(BaseRunner):
+    def __init__(self, args, model):
+        self.sampling_params = SamplingParams(
+            top_k=-1,
+            ...
+            stop=[],
+        )
+```
+
+
+
+
+
 ### 5. Run the Evaluation
 
 1. LiveCodeBench v6
 
 ```shell
 # LiveCodeBench v6 (2025.02.01 - 2025.05.01 for release v6, 131 problems total):
+export VLLM_USE_V1=0 # In our experiments, the v1 engine lowers the LCB score by about 2 points compared to v0
+export VLLM_ATTENTION_BACKEND=FLASH_ATTN
 N_ROLLOUT=8
 python -m lcb_runner.runner.main \
     --model VibeThinker/VibeThinker-1.5B \
@@ -113,7 +139,8 @@ python -m lcb_runner.runner.main \
     --codegen_n $N_ROLLOUT \
     --max_tokens 40960 \
     --start_date 2025-02-01 \
-    --tensor_parallel_size 4 \
+    --tensor_parallel_size 1 \
+    --enable_prefix_caching \
     --num_process_evaluate 180
 ```
 
@@ -121,6 +148,8 @@ python -m lcb_runner.runner.main \
 
 ```shell
 # LiveCodeBench v5 (2024.08.01 - 2025.02.01 for release v5, 279 problems total):
+export VLLM_USE_V1=0 # In our experiments, the v1 engine lowers the LCB score by about 2 points compared to v0
+export VLLM_ATTENTION_BACKEND=FLASH_ATTN
 N_ROLLOUT=8
 python -m lcb_runner.runner.main \
     --model VibeThinker/VibeThinker-1.5B \
@@ -133,7 +162,8 @@ python -m lcb_runner.runner.main \
     --codegen_n $N_ROLLOUT \
     --max_tokens 40960 \
     --start_date 2024-08-01 \
-    --tensor_parallel_size 4 \
+    --tensor_parallel_size 1 \
+    --enable_prefix_caching \
     --num_process_evaluate 180
 ```
 
