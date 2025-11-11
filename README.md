@@ -117,10 +117,17 @@ if __name__ == '__main__':
 
 This code repository is licensed under [the MIT License](https://github.com/WeiboAI/VibeThinker/blob/main/LICENSE).
 
-## Citation
-
-If you find our work helpful, feel free to give us a cite.
-
+## Citations
+If you use VibeThinker in your research or product, please cite:
 ```
+@misc{xu2025tinymodelbiglogic,
+      title={Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B}, 
+      author={Sen Xu and Yi Zhou and Wei Wang and Jixin Min and Zhibin Yin and Yingwei Dai and Shixi Liu and Lianyu Pang and Yirong Chen and Junlin Zhang},
+      year={2025},
+      eprint={2511.06221},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2511.06221}, 
+}
 
 ```
