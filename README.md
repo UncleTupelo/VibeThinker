@@ -1,7 +1,7 @@
 # VibeThinker
 <p align="center"><img src="./figures/logo.png" width="100"/></p>
 
-<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/organization/WeiboAI">Model Scope</a>   |  &nbsp&nbsp📄  <a href="https://huggingface.co/papers/2511.06221">Techical Report</a></p>
+<p align="center">🤗 <a href="https://huggingface.co/WeiboAI">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/organization/WeiboAI">Model Scope</a>   |  &nbsp&nbsp📄  <a href="https://huggingface.co/papers/2511.06221">Techical Report</a></p> |  &nbsp&nbsp🏆  <a href="https://arxiv.org/abs/2511.06221">arxiv paper</a></p> 
 
 
 ## Introduction
@@ -14,6 +14,8 @@ Most remarkably, VibeThinker-1.5B surpasses the initial DeepSeek R1 model—whic
 <p align="center"><img src="./figures/vibethinker_eval2.png" /></p>
 
 ## News
+[2025.11.11] 🎉🎉🎉 VibeThinker-1.5B is now open source! The model weights and technical report can be accessed via the links at the top.
+
 [2025.11.05] 📢📢📢 VibeThinker-1.5B will be open-sourced soon. Stay tuned!
 
 ## Key Features
