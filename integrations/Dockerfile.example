@@ -1,0 +1,46 @@
+# Example Dockerfile for VibeThinker OpenAI-Compatible API
+# 
+# This Dockerfile creates a container running the VibeThinker API server
+# 
+# Build:
+#   docker build -t vibethinker-api -f integrations/Dockerfile.example .
+# 
+# Run:
+#   docker run -p 8000:8000 --gpus all vibethinker-api
+# 
+# Or with vLLM (faster):
+#   docker run -p 8000:8000 --gpus all vibethinker-api --use-vllm
+
+FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04
+
+# Install Python and dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy integration files
+COPY integrations/ /app/integrations/
+
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r integrations/requirements.txt
+
+# Optional: Pre-download the model (uncomment to include in image)
+# RUN python3 -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
+#     AutoModelForCausalLM.from_pretrained('WeiboAI/VibeThinker-1.5B'); \
+#     AutoTokenizer.from_pretrained('WeiboAI/VibeThinker-1.5B')"
+
+# Expose API port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD python3 -c "import requests; requests.get('http://localhost:8000/health')"
+
+# Run the API server
+ENTRYPOINT ["python3", "integrations/openai_api_server.py"]
+CMD ["--host", "0.0.0.0", "--port", "8000", "--model-path", "WeiboAI/VibeThinker-1.5B"]

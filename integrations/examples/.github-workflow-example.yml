@@ -1,0 +1,56 @@
+# Example GitHub Actions workflow for VibeThinker API deployment
+# 
+# This workflow shows how to deploy the VibeThinker OpenAI-compatible API
+# to a server or cloud platform.
+#
+# To use this workflow:
+# 1. Copy to .github/workflows/deploy.yml
+# 2. Update the deployment steps for your platform
+# 3. Add required secrets to your GitHub repository
+
+name: Deploy VibeThinker API
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r integrations/requirements.txt
+      
+      - name: Test integration structure
+        run: |
+          python integrations/examples/test_integration_structure.py
+
+  # Example deployment to a cloud server
+  # Uncomment and modify for your deployment platform
+  # deploy:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+  #   
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     
+  #     - name: Deploy to server
+  #       run: |
+  #         # Example: Deploy to your cloud platform
+  #         # ssh user@server 'cd /app && git pull && systemctl restart vibethinker-api'
+  #         
+  #         # Or use platform-specific actions:
+  #         # - AWS: aws-actions/configure-aws-credentials
+  #         # - Azure: azure/login
+  #         # - GCP: google-github-actions/auth
+  #         echo "Deploy step - customize for your platform"
