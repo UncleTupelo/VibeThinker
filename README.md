@@ -39,6 +39,16 @@ Most remarkably, VibeThinker-1.5B surpasses the initial DeepSeek R1 model—whic
 
 The model checkpoint is available at: [Hugging Face](https://huggingface.co/WeiboAI/VibeThinker-1.5B) and [ModelScope](https://modelscope.cn/models/WeiboAI/VibeThinker-1.5B).
 
+## Platform Integrations
+
+VibeThinker can be integrated with popular AI platforms like **Claude**, **Perplexity**, and **ChatGPT**. We provide ready-to-use integrations and examples:
+
+- **OpenAI-Compatible API Server**: Run VibeThinker with ChatGPT-compatible API for seamless integration with existing tools
+- **Claude-Style Prompting**: Examples showing how to use Claude's structured reasoning patterns with VibeThinker
+- **Perplexity-Style Search**: Combine VibeThinker's reasoning with search-augmented generation
+
+**➡️ [View Integration Guide](./integrations/README.md)** for detailed instructions, examples, and API documentation.
+
 ## Eval
 
 If you wish to reproduce the results reported in our technical report, the evaluation program and usage guide have been prepared and are available at the following links.: [Math Eval](./eval/math/README.md)​ and [Code Eval](./eval/code/README.md).
